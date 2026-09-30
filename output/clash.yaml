@@ -362,29 +362,28 @@ proxy-groups:
 - interval: 300
   name: 自动选择
   proxies:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
-  - 11
-  - 12
-  - 13
-  - 14
-  - 15
-  - 16
-  - 17
-  - 18
-  - 19
+  - VLESS-2
+  - VLESS-5
+  - VLESS-10
+  - VLESS-11
+  - VLESS-14
+  - VLESS-16
+  - VLESS-18
+  - VLESS-19
+  - VLESS-21
+  - VLESS-23
+  - VLESS-26
+  - VLESS-28
+  - VLESS-29
+  - VLESS-32
+  - VLESS-33
+  - VLESS-36
+  - VLESS-38
+  - VLESS-39
+  - VLESS-41
+  - VLESS-44
   type: url-test
   url: https://www.gstatic.com/generate_204
-rules:
 - DOMAIN,sni.macromedia.com,DIRECT
 - DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT
 - GEOIP,cn,DIRECT
