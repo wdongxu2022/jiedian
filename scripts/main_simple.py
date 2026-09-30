@@ -141,7 +141,7 @@ def main():
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 300,
-                "proxies": list(range(min(20, len(valid_nodes))))
+                "proxies": ["VLESS-" + str(i+1) for i in range(min(20, len(valid_nodes)))]
             }
         ],
         "rules": [
