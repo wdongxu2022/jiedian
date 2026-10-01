@@ -76,4 +76,4 @@ proxy-groups:
   - 🇷🇴 罗马尼亚 (Romania) 05 - xiaohe
   - 🇷🇴 罗马尼亚 (Romania) 06 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
