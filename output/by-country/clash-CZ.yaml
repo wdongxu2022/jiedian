@@ -32,4 +32,4 @@ proxy-groups:
   proxies:
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
