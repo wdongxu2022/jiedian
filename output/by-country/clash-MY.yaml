@@ -41,4 +41,4 @@ proxy-groups:
   - 🇲🇾 马来西亚 (Malaysia) 01 - xiaohe
   - 🇲🇾 马来西亚 (Malaysia) 02 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
