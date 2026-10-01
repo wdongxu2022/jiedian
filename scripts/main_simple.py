@@ -141,7 +141,7 @@ def main():
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 300,
-                "proxies": ["VLESS-" + str(i+1) for i in range(min(20, len(valid_nodes)))]
+                "proxies": [p["name"] for p in clash_config["proxies"]]
             }
         ],
         "rules": [
