@@ -52,4 +52,4 @@ proxy-groups:
   - 🇦🇹 奥地利 (Austria) 02 - xiaohe
   - 🇦🇹 奥地利 (Austria) 03 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
