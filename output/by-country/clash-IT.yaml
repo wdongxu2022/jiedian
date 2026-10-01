@@ -84,4 +84,4 @@ proxy-groups:
   - 🇮🇹 意大利 (Italy) 05 - xiaohe
   - 🇮🇹 意大利 (Italy) 06 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
