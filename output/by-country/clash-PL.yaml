@@ -158,4 +158,4 @@ proxy-groups:
   - 🇵🇱 波兰 (Poland) 11 - xiaohe
   - 🇵🇱 波兰 (Poland) 12 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
