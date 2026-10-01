@@ -279,4 +279,4 @@ proxy-groups:
   - 🇫🇷 法国 (France) 21 - xiaohe
   - 🇫🇷 法国 (France) 22 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
