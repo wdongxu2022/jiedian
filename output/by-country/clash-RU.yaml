@@ -67,4 +67,4 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
