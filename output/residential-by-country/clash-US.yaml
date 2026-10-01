@@ -30,4 +30,4 @@ proxy-groups:
   proxies:
   - 🇺🇸 美国 (United States) 01 (家宽) - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
