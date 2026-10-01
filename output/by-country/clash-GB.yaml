@@ -315,4 +315,4 @@ proxy-groups:
   - 🇬🇧 英国 (United Kingdom) 25 - xiaohe
   - 🇬🇧 英国 (United Kingdom) 26 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
