@@ -430,4 +430,4 @@ rules:
 - DOMAIN,sni.macromedia.com,DIRECT
 - DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT
 - GEOIP,cn,DIRECT
-- FINAL,PROXY
+- MATCH,PROXY
