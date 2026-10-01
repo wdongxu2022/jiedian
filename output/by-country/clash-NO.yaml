@@ -53,4 +53,4 @@ proxy-groups:
   - 🇳🇴 挪威 (Norway) 02 - xiaohe
   - 🇳🇴 挪威 (Norway) 03 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
