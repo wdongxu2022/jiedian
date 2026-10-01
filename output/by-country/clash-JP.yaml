@@ -378,4 +378,4 @@ proxy-groups:
   - 🇯🇵 日本 (Japan) 27 - xiaohe
   - 🇯🇵 日本 (Japan) 28 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
