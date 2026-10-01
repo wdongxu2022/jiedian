@@ -1125,4 +1125,4 @@ proxy-groups:
   - 🇳🇱 荷兰 (Netherlands) 97 - xiaohe
   - 🇳🇱 荷兰 (Netherlands) 98 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
