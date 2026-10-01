@@ -46,4 +46,4 @@ proxy-groups:
   - 🇹🇼 中国台湾 (Taiwan) 02 (家宽) - xiaohe
   - 🇹🇼 中国台湾 (Taiwan) 03 (家宽) - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
