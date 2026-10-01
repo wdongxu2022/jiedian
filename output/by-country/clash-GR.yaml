@@ -41,4 +41,4 @@ proxy-groups:
   - 🇬🇷 希腊 (Greece) 01 - xiaohe
   - 🇬🇷 希腊 (Greece) 02 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
