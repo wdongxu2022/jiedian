@@ -25,4 +25,4 @@ proxy-groups:
   proxies:
   - 🇶🇦 卡塔尔 (Qatar) 01 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
