@@ -87,4 +87,4 @@ proxy-groups:
   - 🇪🇸 西班牙 (Spain) 05 - xiaohe
   - 🇪🇸 西班牙 (Spain) 06 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
