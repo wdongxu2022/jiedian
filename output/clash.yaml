@@ -427,7 +427,7 @@ proxy-groups:
   type: url-test
   url: https://www.gstatic.com/generate_204
 rules:
-- DOMAIN,sni.macromedia.com,DIRECT
-- DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT
-- GEOIP,cn,DIRECT
-- FINAL,PROXY
+- "DOMAIN,sni.macromedia.com,DIRECT"
+- "DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT"
+- "GEOIP,cn,DIRECT"
+- "FINAL,PROXY"
