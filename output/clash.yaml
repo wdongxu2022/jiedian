@@ -404,26 +404,26 @@ proxy-groups:
 - interval: 300
   name: 自动选择
   proxies:
-  - VLESS-1
   - VLESS-2
   - VLESS-3
   - VLESS-4
-  - VLESS-5
-  - VLESS-6
-  - VLESS-7
   - VLESS-8
-  - VLESS-9
   - VLESS-10
   - VLESS-11
   - VLESS-12
   - VLESS-13
   - VLESS-14
   - VLESS-15
-  - VLESS-16
   - VLESS-17
   - VLESS-18
   - VLESS-19
-  - VLESS-20
+  - VLESS-21
+  - VLESS-22
+  - VLESS-26
+  - VLESS-28
+  - VLESS-29
+  - VLESS-32
+  - VLESS-33
   type: url-test
   url: https://www.gstatic.com/generate_204
 rules:
