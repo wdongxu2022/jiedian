@@ -622,4 +622,4 @@ proxy-groups:
   - 🇩🇪 德国 (Germany) 46 - xiaohe
   - 🇩🇪 德国 (Germany) 47 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
