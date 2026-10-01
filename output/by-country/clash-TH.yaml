@@ -28,4 +28,4 @@ proxy-groups:
   proxies:
   - 🇹🇭 泰国 (Thailand) 01 - xiaohe
 rules:
-- "MATCH,PROXIES"
+- MATCH,PROXIES"
