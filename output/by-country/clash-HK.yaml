@@ -404,4 +404,4 @@ proxy-groups:
   - 🇭🇰 中国香港 (Hong Kong) 28 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 29 - xiaohe
 rules:
-- MATCH,PROXIES
+- "MATCH,PROXIES"
