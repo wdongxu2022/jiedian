@@ -16,7 +16,7 @@ proxies:
   ws-opts:
     path: /sync
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
