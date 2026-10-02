@@ -26,4 +26,4 @@ proxy-groups:
   proxies:
   - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 01 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
