@@ -20,7 +20,7 @@ proxies:
     headers:
       Host: xo3ubk-c97eql-n2d4a9.shoameni17.workers.dev
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
