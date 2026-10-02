@@ -55,4 +55,4 @@ proxy-groups:
   - 🇸🇪 瑞典 (Sweden) 02 - xiaohe
   - 🇸🇪 瑞典 (Sweden) 03 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
