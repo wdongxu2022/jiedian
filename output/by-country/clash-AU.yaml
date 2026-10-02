@@ -75,4 +75,4 @@ proxy-groups:
   - 🇦🇺 澳大利亚 (Australia) 04 - xiaohe
   - 🇦🇺 澳大利亚 (Australia) 05 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
