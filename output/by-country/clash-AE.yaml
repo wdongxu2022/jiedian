@@ -88,4 +88,4 @@ proxy-groups:
   - 🇦🇪 阿联酋 (UAE) 05 - xiaohe
   - 🇦🇪 阿联酋 (UAE) 06 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
