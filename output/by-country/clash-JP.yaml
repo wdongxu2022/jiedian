@@ -312,7 +312,7 @@ proxies:
   alterId: 0
   cipher: auto
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
