@@ -225,7 +225,7 @@ proxies:
     headers:
       Host: bab-6.site
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
