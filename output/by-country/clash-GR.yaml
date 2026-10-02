@@ -27,7 +27,7 @@ proxies:
   grpc-opts:
     grpc-service-name: security.debian.org
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
