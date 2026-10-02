@@ -37,7 +37,7 @@ proxies:
   servername: bowandbead.com
   client-fingerprint: qq
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
