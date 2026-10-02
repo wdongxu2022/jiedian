@@ -54,4 +54,4 @@ proxy-groups:
   - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
   - 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
