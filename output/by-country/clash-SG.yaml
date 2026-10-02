@@ -313,7 +313,7 @@ proxies:
   servername: www.apple.com
   client-fingerprint: edge
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
