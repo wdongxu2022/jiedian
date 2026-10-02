@@ -124,7 +124,7 @@ proxies:
   skip-cert-verify: false
   client-fingerprint: firefox
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
@@ -158,4 +158,4 @@ proxy-groups:
   - 🇵🇱 波兰 (Poland) 11 - xiaohe
   - 🇵🇱 波兰 (Poland) 12 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
