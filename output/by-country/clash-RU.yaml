@@ -49,7 +49,7 @@ proxies:
     headers:
       Host: cf3.rumedia-cdn.com
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
@@ -67,4 +67,4 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
