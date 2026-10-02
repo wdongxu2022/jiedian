@@ -381,4 +381,4 @@ proxy-groups:
   - 🇸🇬 新加坡 (Singapore) 28 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 29 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
