@@ -42,4 +42,4 @@ proxy-groups:
   - 🇿🇦 南非 (South Africa) 02 - xiaohe
   - 🇿🇦 南非 (South Africa) 03 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
