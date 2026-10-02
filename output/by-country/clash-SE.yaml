@@ -39,7 +39,7 @@ proxies:
   sni: cf2.rumedia-cdn.com
   skip-cert-verify: false
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
