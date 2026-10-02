@@ -61,4 +61,4 @@ proxy-groups:
   - 🇮🇳 印度 (India) 03 - xiaohe
   - 🇮🇳 印度 (India) 04 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
