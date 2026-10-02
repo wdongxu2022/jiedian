@@ -53,7 +53,7 @@ proxies:
   grpc-opts:
     grpc-service-name: TunService
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
