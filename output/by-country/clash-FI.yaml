@@ -18,7 +18,7 @@ proxies:
   servername: fin.pinkmoon.pro
   client-fingerprint: qq
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
