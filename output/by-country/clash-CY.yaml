@@ -81,7 +81,7 @@ proxies:
   servername: deepl.com
   client-fingerprint: random
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
