@@ -103,4 +103,4 @@ proxy-groups:
   - 🇨🇾 塞浦路斯 (Cyprus) 05 - xiaohe
   - 🇨🇾 塞浦路斯 (Cyprus) 06 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
