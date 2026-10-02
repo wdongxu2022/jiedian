@@ -30,7 +30,7 @@ proxies:
   sni: cabinet.wwwinternetvideo.click
   skip-cert-verify: true
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
