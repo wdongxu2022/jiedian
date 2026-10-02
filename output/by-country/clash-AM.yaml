@@ -20,7 +20,7 @@ proxies:
     headers:
       Host: rayan-007.nastaran.dpdns.org
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
