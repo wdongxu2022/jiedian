@@ -253,4 +253,4 @@ proxy-groups:
   - 🇨🇦 加拿大 (Canada) 21 - xiaohe
   - 🇨🇦 加拿大 (Canada) 22 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
