@@ -38,7 +38,7 @@ proxies:
     headers:
       Host: cf9.rumedia-cdn.com
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
