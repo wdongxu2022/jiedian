@@ -2517,4 +2517,4 @@ proxy-groups:
   - 🇺🇸 美国 (United States) 193 - xiaohe
   - 🇺🇸 美国 (United States) 194 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
