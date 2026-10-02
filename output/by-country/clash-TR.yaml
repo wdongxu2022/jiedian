@@ -71,4 +71,4 @@ proxy-groups:
   - 🇹🇷 土耳其 (Turkey) 03 - xiaohe
   - 🇹🇷 土耳其 (Turkey) 04 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
