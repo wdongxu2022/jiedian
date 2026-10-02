@@ -43,7 +43,7 @@ proxies:
   cipher: aes-256-gcm
   password: RexnBgU7EV5ADxG
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
