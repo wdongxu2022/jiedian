@@ -13,7 +13,7 @@ proxies:
   sni: z-jp2.1card.cc
   skip-cert-verify: true
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
