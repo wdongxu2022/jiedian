@@ -18,7 +18,7 @@ proxies:
   servername: gateway.icloud.com
   client-fingerprint: chrome
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
