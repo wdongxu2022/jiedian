@@ -16,7 +16,7 @@ proxies:
   ws-opts:
     path: /tr/8g28WHK4FygFkZFa
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
