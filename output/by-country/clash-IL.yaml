@@ -46,4 +46,4 @@ proxy-groups:
   - 🇮🇱 以色列 (Israel) 01 - xiaohe
   - 🇮🇱 以色列 (Israel) 02 - xiaohe
 rules:
-- MATCH,PROXIES"
+- MATCH,PROXY
