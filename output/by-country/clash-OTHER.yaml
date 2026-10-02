@@ -19,7 +19,7 @@ proxies:
     headers:
       Host: jdzit4e4urks.xwzohsebujps.workers.dev
 proxy-groups:
-- name: PROXIES
+- name: PROXY
   type: select
   proxies:
   - AUTO
