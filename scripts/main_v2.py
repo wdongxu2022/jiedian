@@ -733,7 +733,7 @@ def export_clash_yaml(clash_proxies, filepath):
             {"name": "PROXY", "type": "select", "PROXY": ["AUTO"] + names},
             {"name": "AUTO", "type": "url-test", "url": "https://www.google.com/generate_204", "interval": 300, "PROXY": names}
         ],
-        "rules": ["MATCH,PROXIES"]
+        "rules": ["MATCH,PROXY"]
     }
     with open(filepath, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
@@ -750,27 +750,6 @@ def export_singbox_json(clash_proxies, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2, ensure_ascii=False)
 
-def format_node_group(nodes_list, res_tag_force=False):
-    formatted_links = []
-    formatted_proxies = []
-    
-    for idx, item in enumerate(nodes_list, start=1):
-        cc = item["country"]
-        flag = get_country_flag(cc)
-        c_name = COUNTRY_NAMES.get(cc, cc)
-        
-        is_res = item["is_residential"] or res_tag_force
-        tag = " (家宽)" if is_res else ""
-        node_name = f"{flag} {c_name} {idx:02d}{tag} - xiaohe"
-        
-        new_proxy = dict(item["clash_proxy"])
-        new_proxy["name"] = node_name
-        formatted_proxies.append(new_proxy)
-        
-        new_link = rename_node_link(item["link"], node_name)
-        formatted_links.append(new_link)
-        
-    return formatted_links, formatted_proxies
 
 def export_subscriptions(verified_nodes):
     ensure_directories()
