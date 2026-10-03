@@ -728,10 +728,10 @@ def export_clash_yaml(clash_proxies, filepath):
         "allow-lan": True,
         "mode": "rule",
         "log-level": "info",
-        "proxies": clash_proxies,
+        "PROXY": clash_proxies,
         "proxy-groups": [
-            {"name": "PROXIES", "type": "select", "proxies": ["AUTO"] + names},
-            {"name": "AUTO", "type": "url-test", "url": "https://www.google.com/generate_204", "interval": 300, "proxies": names}
+            {"name": "PROXY", "type": "select", "PROXY": ["AUTO"] + names},
+            {"name": "AUTO", "type": "url-test", "url": "https://www.google.com/generate_204", "interval": 300, "PROXY": names}
         ],
         "rules": ["MATCH,PROXIES"]
     }
