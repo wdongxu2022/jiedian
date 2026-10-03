@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-简化版节点测活脚本 - 快速可用
-"""
+"""简化版节点测活脚本 - 快速可用，支持完整 VLESS 参数"""
 import os
 import re
 import sys
@@ -11,7 +9,6 @@ import base64
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# 简化的订阅源 - 只保留最可靠的
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/freefq/free/master/v2",
     "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt",
@@ -22,29 +19,77 @@ SOURCE_URLS = [
 OUTPUT_DIR = "output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+def parse_vless(url):
+    m = re.match(r'vless://([^@]+)@([^:]+):(\d+)\??(.*)', url)
+    if not m: return None
+    uuid, server, port_s, query = m.groups()
+    params = dict(re.findall(r'([^=&#]+)=([^&#]*)', query))
+    node = {"name": f"VLESS-{server[:8]}:{port_s}", "type": "vless", "server": server,
+            "port": int(port_s), "uuid": uuid, "network": params.get('type', 'tcp'), "tls": params.get('security') in ('tls', 'reality')}
+    if params.get('sni'): node["servername"] = params["sni"]
+    if params.get('fp'): node["client-fingerprint"] = params["fp"]
+    if params.get('flow'): node["flow"] = params["flow"]
+    if params.get('security') == 'reality':
+        node["reality-opts"] = {"public-key": params.get('pbk', '')}
+        if params.get('sid'): node["reality-opts"]["short-id"] = params["sid"]
+    if node["network"] == "ws" and params.get('path'):
+        node["ws-opts"] = {"path": params["path"]}
+        if params.get('host'): node["ws-opts"]["headers"] = {"Host": params["host"]}
+    return node
+
+def parse_vmess(url):
+    try:
+        b64 = url[8:] + '=' * (-len(url[8:]) % 4)
+        data = json.loads(base64.b64decode(b64).decode())
+        node = {"name": f"VMess-{data.get('add','')[:8]}", "type": "vmess", "server": data.get('add',''),
+                "port": int(data.get('port',0)), "uuid": data.get('id',''), "alterId": int(data.get('aid',0)),
+                "cipher": data.get('scy','auto'), "network": data.get('net','tcp'), "tls": data.get('tls')=='tls'}
+        if data.get('sni'): node["servername"] = data["sni"]
+        if data.get('fp'): node["client-fingerprint"] = data["fp"]
+        if node["network"]=="ws" and data.get('path'):
+            node["ws-opts"] = {"path": data["path"]}
+            if data.get('host'): node["ws-opts"]["headers"] = {"Host": data["host"]}
+        return node
+    except: return None
+
+def parse_ss(url):
+    m = re.match(r'ss://([^@]+)@([^:]+):(\d+)\??(.*)', url)
+    if not m: return None
+    user_pass, server, port_s, query = m.groups()
+    decoded = base64.b64decode(user_pass + '=' * (-len(user_pass) % 4)).decode(errors='ignore')
+    method, password = decoded.split(':', 1) if ':' in decoded else ("unknown", decoded)
+    params = dict(re.findall(r'([^=&#]+)=([^&#]*)', query))
+    node = {"name": f"SS-{server[:8]}", "type": "ss", "server": server, "port": int(port_s),
+            "cipher": method, "password": password, "udp": True}
+    if params.get('plugin'): node["plugin"] = params["plugin"]
+    return node
+
+def parse_trojan(url):
+    m = re.match(r'trojan://([^@]+)@([^:]+):(\d+)\??(.*)', url)
+    if not m: return None
+    password, server, port_s, query = m.groups()
+    params = dict(re.findall(r'([^=&#]+)=([^&#]*)', query))
+    node = {"name": f"Trojan-{server[:8]}", "type": "trojan", "server": server, "port": int(port_s),
+            "password": password, "udp": True, "tls": True}
+    if params.get('sni'): node["servername"] = params["sni"]
+    if params.get('fp'): node["client-fingerprint"] = params["fp"]
+    return node
+
 def extract_nodes(text):
-    """从文本中提取节点链接"""
     pattern = r'((?:vmess|vless|ss|trojan|hysteria2|hy2)://[^\s"\'>]+)'
     nodes = set(re.findall(pattern, text))
-    
-    # 尝试 base64 解码
-    lines = text.split('\n')
-    for line in lines:
+    for line in text.split('\n'):
         line = line.strip()
-        if line.startswith('dm') or line.startswith('c3M') or len(line) > 100:
+        if line.startswith('dm') or line.startswith('c3S') or len(line) > 100:
             try:
                 decoded = base64.b64decode(line).decode('utf-8', errors='ignore')
                 nodes.update(extract_nodes(decoded))
-            except:
-                pass
-    
+            except: pass
     return nodes
 
 def fetch_nodes():
-    """抓取所有节点"""
     all_nodes = set()
     print("[*] 开始抓取节点...")
-    
     for url in SOURCE_URLS:
         try:
             resp = requests.get(url, timeout=5, headers={"User-Agent": "Mozilla/5.0"})
@@ -54,158 +99,63 @@ def fetch_nodes():
                 print(f"[+] {url[:50]}... -> {len(nodes)} 节点")
         except Exception as e:
             print(f"[!] {url[:50]}... 失败: {e}")
-    
     print(f"[*] 总共抓取到 {len(all_nodes)} 个节点")
     return list(all_nodes)
 
-def quick_test_node(node):
-    """快速测试节点 - 不依赖 Google"""
-    try:
-        # 简单解析服务器和端口
-        if node.startswith("vless://"):
-            match = re.search(r'vless://[^@]+@([^:]+):(\d+)', node)
-            if match:
-                server, port = match.group(1), int(match.group(2))
-        elif node.startswith("vmess://"):
-            b64 = node[8:] + '=' * (-len(node[8:]) % 4)
-            data = json.loads(base64.b64decode(b64).decode('utf-8', errors='ignore'))
-            server = data.get('add', '')
-            port = int(data.get('port', 0))
-        elif node.startswith("ss://"):
-            # 简化的 SS 解析
-            match = re.search(r'ss://[^@]+@([^:]+):(\d+)', node)
-            if match:
-                server, port = match.group(1), int(match.group(2))
-        elif node.startswith("trojan://"):
-            match = re.search(r'trojan://[^@]+@([^:]+):(\d+)', node)
-            if match:
-                server, port = match.group(1), int(match.group(2))
-        else:
-            return None
-        
-        if not server or port <= 0:
-            return None
-            
-        # 返回有效节点（不做实际测活，只保证格式正确）
-        return node
-    except:
-        return None
+def parse_node(node_str):
+    if node_str.startswith("vless://"): return parse_vless(node_str)
+    elif node_str.startswith("vmess://"): return parse_vmess(node_str)
+    elif node_str.startswith("ss://"): return parse_ss(node_str)
+    elif node_str.startswith("trojan://"): return parse_trojan(node_str)
+    return None
 
 def main():
     start_time = time.time()
-    
-    # 1. 抓取节点
     nodes = fetch_nodes()
-    
-    # 2. 快速验证格式
-    print(f"\n[*] 开始验证节点格式...")
-    valid_nodes = []
-    
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        futures = {executor.submit(quick_test_node, n): n for n in nodes}
-        for future in as_completed(futures):
-            result = future.result()
-            if result:
-                valid_nodes.append(result)
-            
-            # 进度日志
-            processed = len(valid_nodes) + len([f for f in futures if f.done() and f.result()])
-            if processed % 50 == 0 or processed == len(nodes):
-                print(f"[+] 已验证: {processed}/{len(nodes)}")
-    
-    print(f"\n[*] 有效节点: {len(valid_nodes)} 个")
-    
-    # 3. 输出结果
-    print(f"\n[*] 生成输出文件...")
-    
-    # v2ray.txt
-    v2ray_content = '\n'.join(valid_nodes)
-    with open(os.path.join(OUTPUT_DIR, "v2ray.txt"), "w") as f:
-        f.write(v2ray_content)
-    
-    # clash.yaml (简化版)
-    clash_config = {
-        "mixed-port": 7890,
-        "allow-lan": True,
-        "mode": "rule",
-        "log-level": "info",
-        "proxies": [],
-        "proxy-groups": [
-            {
-                "name": "PROXY",
-                "type": "select",
-                "proxies": ["自动选择", "故障转移"]
-            },
-            {
-                "name": "自动选择",
-                "type": "url-test",
-                "url": "https://www.gstatic.com/generate_204",
-                "interval": 300,
-                "proxies": []
-            }
-        ],
-        "rules": [
-            "DOMAIN,sni.macromedia.com,DIRECT",
-            "DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT",
-            "GEOIP,cn,DIRECT",
-            "MATCH,PROXY"
-        ]
-    }
-    
-    # 转换节点为 Clash 格式
-    for i, node in enumerate(valid_nodes[:100]):  # 限制数量
-        if node.startswith("vless://"):
-            clash_config["proxies"].append({
-                "name": f"VLESS-{i+1}",
-                "type": "vless",
-                "server": re.search(r'@([^:]+)', node).group(1) if re.search(r'@([^:]+)', node) else "unknown",
-                "port": int(re.search(r':(\d+)', node).group(1)) if re.search(r':(\d+)', node) else 0,
-                "uuid": re.search(r'vless://([^@]+)', node).group(1) if re.search(r'vless://([^@]+)', node) else "",
-                "network": "tcp",
-                "tls": True
-            })
-    
+    print(f"\n[*] 解析节点...")
+    proxies = []
+    for n in nodes:
+        p = parse_node(n)
+        if p: proxies.append(p)
+    print(f"[+] 有效节点: {len(proxies)} 个")
+    # clash.yaml
+    config = {"mixed-port": 7890, "allow-lan": True, "mode": "rule", "log-level": "info",
+              "proxies": proxies,
+              "proxy-groups": [
+                  {"name": "PROXY", "type": "select", "proxies": ["自动选择", "故障转移"]},
+                  {"name": "自动选择", "type": "url-test", "url": "https://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in proxies]},
+                  {"name": "故障转移", "type": "fallback", "url": "https://www.gstatic.com/generate_204", "interval": 300, "proxies": [p["name"] for p in proxies]}
+              ],
+              "rules": ["DOMAIN,sni.macromedia.com,DIRECT", "DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT", "GEOIP,cn,DIRECT", "MATCH,PROXY"]}
     with open(os.path.join(OUTPUT_DIR, "clash.yaml"), "w") as f:
         import yaml
-        yaml.dump(clash_config, f, allow_unicode=True, default_flow_style=False)
-    
+        yaml.dump(config, f, allow_unicode=True, default_flow_style=False)
+    # v2ray.txt
+    with open(os.path.join(OUTPUT_DIR, "v2ray.txt"), "w") as f:
+        f.write('\n'.join(nodes))
     # singbox.json
-    singbox_config = {
-        "inbounds": [
-            {
-                "type": "mixed",
-                "listen": "0.0.0.0",
-                "listen_port": 2080
-            }
-        ],
-        "outbounds": [
-            {"type": "direct", "tag": "direct"},
-            {"type": "dns", "tag": "dns"},
-            {"type": "selector", "tag": "proxy", "outbounds": ["auto", "proxy"]},
-            {"type": "urltest", "tag": "auto", "outbounds": [f"proxy-{i+1}" for i in range(min(20, len(valid_nodes)))], "url": "https://www.gstatic.com/generate_204", "interval": "10m"}
-        ] + [{"type": outbound_type, "tag": f"proxy-{i+1}", "server": server, "server_port": port, "uuid": uuid, "network": "tcp", "tls": {"enabled": True}} for i, (_, outbound_type, server, port, uuid) in enumerate([(n, "vless", re.search(r'@([^:]+)', n).group(1) if re.search(r'@([^:]+)', n) else "unknown", int(re.search(r':(\d+)', n).group(1)) if re.search(r':(\d+)', n) else 0, re.search(r'vless://([^@]+)', n).group(1) if re.search(r'vless://([^@]+)', n) else "") for n in valid_nodes[:20]])],
-        "route": {
-            "rules": [
-                {"protocol": "dns", "outbound": "dns"},
-                {"geosite": "cn", "outbound": "direct"}
-            ],
-            "final": "proxy"
-        }
-    }
-    
+    sb_proxies = []
+    for p in proxies[:100]:
+        sb = {"tag": p["name"], "type": p["type"], "server": p["server"], "server_port": p["port"]}
+        if p["type"] == "vless": sb.update({"uuid": p["uuid"], "tls": {"enabled": p.get("tls", False)}, "transport": {}})
+        elif p["type"] == "vmess": sb.update({"uuid": p["uuid"], "security": p.get("cipher", "auto"), "tls": {"enabled": p.get("tls", False)}})
+        elif p["type"] == "ss": sb.update({"method": p["cipher"], "password": p["password"]})
+        elif p["type"] == "trojan": sb.update({"password": p["password"], "tls": {"enabled": True}})
+        sb_proxies.append(sb)
+    sb_config = {"inbounds": [{"type": "mixed", "listen": "0.0.0.0", "listen_port": 2080}],
+                 "outbounds": [{"type": "direct", "tag": "direct"}, {"type": "dns", "tag": "dns"},
+                               {"type": "selector", "tag": "proxy", "outbounds": ["auto", "proxy"]},
+                               {"type": "urltest", "tag": "auto", "outbounds": [p["tag"] for p in sb_proxies[:20]], "url": "https://www.gstatic.com/generate_204", "interval": "10m"}] + sb_proxies,
+                 "route": {"rules": [{"protocol": "dns", "outbound": "dns"}, {"geosite": "cn", "outbound": "direct"}], "final": "proxy"}}
     with open(os.path.join(OUTPUT_DIR, "singbox.json"), "w") as f:
-        json.dump(singbox_config, f, indent=2, ensure_ascii=False)
-    
-    # 家宽专区（为空）
+        json.dump(sb_config, f, indent=2, ensure_ascii=False)
     with open(os.path.join(OUTPUT_DIR, "residential.txt"), "w") as f:
         f.write("")
-    
     elapsed = time.time() - start_time
-    print(f"\n[+] 完成！耗时: {elapsed:.1f} 秒")
-    print(f"[+] 输出目录: {OUTPUT_DIR}/")
-    print(f"    - v2ray.txt: {len(valid_nodes)} 节点")
-    print(f"    - clash.yaml: 已生成")
-    print(f"    - singbox.json: 已生成")
+    print(f"\n[+] 完成！耗时: {elapsed:.1f}s")
+    print(f"    clash.yaml: {len(proxies)} 节点")
+    print(f"    v2ray.txt: {len(nodes)} 节点")
+    print(f"    singbox.json: {len(sb_proxies)} 节点")
 
 if __name__ == "__main__":
     main()
