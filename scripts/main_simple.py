@@ -141,14 +141,14 @@ def main():
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 300,
-                "proxies": [p["name"] for p in clash_config["proxies"]]
+                "proxies": []
             }
         ],
         "rules": [
             "DOMAIN,sni.macromedia.com,DIRECT",
             "DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT",
             "GEOIP,cn,DIRECT",
-            "FINAL,PROXY"
+            "MATCH,PROXY"
         ]
     }
     
