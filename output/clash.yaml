@@ -19,13 +19,6 @@ proxies:
   cipher: aes-256-cfb
   password: "amazonskr05"
   skip-cert-verify: true
-- name: "🇰🇷_韩国_VPS"
-  type: ss
-  server: 43.201.103.218
-  port: 8443
-  cipher: chacha20-ietf-poly1305
-  password: ""
-  skip-cert-verify: true
 - name: "🇺🇸_美国_墨西哥湾"
   type: ss
   server: 64.177.90.30
@@ -41,7 +34,6 @@ proxy-groups:
   - 自动选择
   - 🇺🇸_美国_AWS
   - 🇫🇷_法国_AWS
-  - 🇰🇷_韩国_VPS
   - 🇺🇸_美国_墨西哥湾
 - name: 自动选择
   type: url-test
@@ -51,7 +43,6 @@ proxy-groups:
   proxies:
   - 🇺🇸_美国_AWS
   - 🇫🇷_法国_AWS
-  - 🇰🇷_韩国_VPS
   - 🇺🇸_美国_墨西哥湾
 
 rules:
