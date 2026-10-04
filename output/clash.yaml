@@ -11,6 +11,7 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
+  skip-cert-verify: true
 - name: 🇭🇰 香港|@ripaojiedian
   server: v10.hdacd.com
   port: 30807
@@ -19,7 +20,7 @@ proxies:
   alterId: 2
   cipher: auto
   tls: false
-  skip-cert-verify: false
+  skip-cert-verify: true
 - name: 🇭🇰 香港3|@ripaojiedian
   server: ADncdOvLHR4M1P36.v.3dns.vip
   port: 443
@@ -28,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: ADncdOvLHR4M1P36.v.3dns.vip
   network: ws
   ws-opts:
@@ -43,7 +44,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: kBONDXW9liFCi4h4.v.3dns.vip
   network: ws
   ws-opts:
@@ -58,7 +59,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: aZW0eunYVdvRe73k.v.3dns.vip
   network: ws
   ws-opts:
@@ -73,7 +74,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: syJ2gGUgMwBwQwQx.v.3dns.vip
   network: ws
   ws-opts:
@@ -88,7 +89,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: Z9FfBx3zs2q5O0BG.v.3dns.vip
   network: ws
   ws-opts:
@@ -103,7 +104,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: kQov7UKaDknXb8a3.v.3dns.vip
   network: ws
   ws-opts:
@@ -118,7 +119,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: kneNaKHeSXnZH259.v.3dns.vip
   network: ws
   ws-opts:
@@ -133,7 +134,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: ASaqYIDZa9WDQ9Kq.v.3dns.vip
   network: ws
   ws-opts:
@@ -148,7 +149,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: 6JiziO8PxQAXBAtZ.v.3dns.vip
   network: ws
   ws-opts:
@@ -163,7 +164,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: 8nTzyR5KNivfabaT.v.3dns.vip
   network: ws
   ws-opts:
@@ -178,7 +179,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: 53vXOVarmgcreAsv.v.3dns.vip
   network: ws
   ws-opts:
@@ -193,7 +194,7 @@ proxies:
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: false
+  skip-cert-verify: true
   servername: bJ1Aa2ZyJxYamYuK.v.3dns.vip
   network: ws
   ws-opts:
