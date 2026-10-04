@@ -1,254 +1,332 @@
+mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-external-controller: 127.0.0.1:9090
 ipv6: true
+external-controller: 127.0.0.1:9090
 unified-delay: true
 proxies:
-- name: tg频道:@ripaojiedian
-  server: 63.180.254.10
-  port: 443
+- cipher: chacha20-ietf-poly1305
+  name: 🇦🇱[www.v2nodes.com] ss-AL-1490...
+  password: IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw=
+  port: 43558
+  server: 130.49.189.158
   type: ss
-  cipher: aes-256-cfb
+  skip-cert-verify: true
+- cipher: aes-128-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1584...
+  password: 1cbb3e347ee86e1980a7c731e9dd00a0
+  port: 17201
+  server: 64.74.161.148
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1584... #1'
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  port: 9443
+  server: yyz-ca-01.blncvpn4u.cc
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1574...
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  port: 9443
+  server: 185.156.47.97
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1559...
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.141.125
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1559... #1'
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1558...
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 51.222.200.165
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.222.136.236
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  password: Y6R9pAtvxxzmGC
+  port: 5601
+  server: 51.222.155.113
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1546... #1'
+  password: g5MeD6Ft3CWlJId
+  port: 5003
+  server: 51.222.155.32
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1545...
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1538...
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇨🇭[www.v2nodes.com] ss-CH-1573...
+  password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
+  port: 8388
+  server: 132.243.175.144
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇨🇴[www.v2nodes.com] ss-CO-1539...
+  password: PCnnH6SQSnfoS27
+  port: 8090
+  server: 149.104.107.41
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇪🇸[www.v2nodes.com] ss-ES-1443...
+  password: qItG8SueYQcP
+  port: 8388
+  server: 140.174.184.5
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇪🇸[www.v2nodes.com] ss-ES-1431...
+  password: WSyL4XTwNsdv
+  port: 8388
+  server: 108.181.121.226
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇫🇷[www.v2nodes.com] ss-FR-1536...
+  password: BqnqToih0PbU
+  port: 8388
+  server: 51.255.13.232
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-128-gcm
+  name: 🇬🇧[www.v2nodes.com] ss-GB-1451...
+  password: shadowsocks
+  port: 443
+  server: 158.173.24.73
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇭🇰[www.v2nodes.com] ss-HK-1585...
+  password: pno0e2keji2gsfea
+  port: 1080
+  server: telegram.khp25.com
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇭🇰[www.v2nodes.com] ss-HK-1576...
+  password: m5nsedvdczx6x06e
+  port: 1080
+  server: telegramx.khp25.com
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇮🇩[www.v2nodes.com] ss-ID-1553...
+  password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
+  port: 31348
+  server: 103.160.63.199
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇮🇹[www.v2nodes.com] ss-IT-1549...
+  password: itzvpn@321
+  port: 8388
+  server: 57.131.48.45
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇰🇷[www.v2nodes.com] ss-KR-1580...
+  password: ac9c0a7b
+  port: 49642
+  server: ce1fc2d8.krkt.hkssip.com
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
+  password: TEzjfAYq2IjtuoS
+  port: 6697
+  server: 141.164.45.187
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇴[www.v2nodes.com] ss-NO-1220...
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  port: 990
+  server: 185.213.23.63
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-128-gcm
+  name: 🇵🇹[www.v2nodes.com] ss-PT-1585...
+  password: ca438054771821250089399a2f33275e
+  port: 17167
+  server: 185.231.233.91
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇷🇴[www.v2nodes.com] ss-RO-1298...
+  password: QFWzCw2uX9B9i6qAYeFBIE
+  port: 443
+  server: 154.46.31.106
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🏳[www.v2nodes.com] ss-
+  password: VVlAff77CnAU43Aoc5j15Y
+  port: 5112
+  server: 90.156.203.62
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇸🇬[www.v2nodes.com] ss-SG-1581...
+  password: 9epp3o9ng8ej59uv
+  port: 14249
+  server: 45.128.12.20
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-gcm
+  name: 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  password: qpSevKaUXYQKvSjp
+  port: 8388
+  server: 139.180.220.175
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-128-gcm
+  name: 🇺🇸[www.v2nodes.com] ss-US-1586...
+  password: 6c4993acd1ca7f12f0a18bdcb3c37c6c
+  port: 10272
+  server: 66.23.201.172
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-128-gcm
+  name: '🇺🇸[www.v2nodes.com] ss-US-1586... #1'
+  password: 1377d5cfafc9279a904deb3bfa4f3de2
+  port: 14680
+  server: 74.201.177.54
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇿🇦[www.v2nodes.com] ss-ZA-1534...
+  password: tfAcRikawhNoZAhu
+  port: 8388
+  server: 139.84.247.164
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇿🇦[www.v2nodes.com] ss-ZA-1336...
+  password: aduB9HGxQHjA2SBMRjkHX6
+  port: 443
+  server: 102.37.156.224
+  type: ss
+  skip-cert-verify: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇿🇦[www.v2nodes.com] ss-ZA-1333...
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  port: 16233
+  server: 102.133.165.160
+  type: ss
+  skip-cert-verify: true
+- cipher: aes-256-cfb
+  name: 'tg频道:@ripaojiedian #1'
   password: amazonskr05
-  skip-cert-verify: true
-- name: 🇭🇰 香港|@ripaojiedian
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-- name: 🇭🇰 香港3|@ripaojiedian
-  server: ADncdOvLHR4M1P36.v.3dns.vip
   port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
+  server: 63.180.254.10
+  type: ss
   skip-cert-verify: true
-  servername: ADncdOvLHR4M1P36.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: ADncdOvLHR4M1P36.v.3dns.vip
-- name: 🇭🇰 香港2|@ripaojiedian
-  server: kBONDXW9liFCi4h4.v.3dns.vip
+- cipher: aes-256-cfb
+  name: '🇺🇸 美国 | USA #19'
+  password: amazonskr05
   port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
+  server: 98.88.75.157
+  type: ss
   skip-cert-verify: true
-  servername: kBONDXW9liFCi4h4.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: kBONDXW9liFCi4h4.v.3dns.vip
-- name: 🇭🇰 香港4|@ripaojiedian
-  server: aZW0eunYVdvRe73k.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: aZW0eunYVdvRe73k.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: aZW0eunYVdvRe73k.v.3dns.vip
-- name: 🇭🇰 香港5|@ripaojiedian
-  server: syJ2gGUgMwBwQwQx.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: syJ2gGUgMwBwQwQx.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: syJ2gGUgMwBwQwQx.v.3dns.vip
-- name: 🇯🇵 日本|@ripaojiedian
-  server: Z9FfBx3zs2q5O0BG.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: Z9FfBx3zs2q5O0BG.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: Z9FfBx3zs2q5O0BG.v.3dns.vip
-- name: 🇯🇵 日本2|@ripaojiedian
-  server: kQov7UKaDknXb8a3.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: kQov7UKaDknXb8a3.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: kQov7UKaDknXb8a3.v.3dns.vip
-- name: 🇯🇵 日本3|@ripaojiedian
-  server: kneNaKHeSXnZH259.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: kneNaKHeSXnZH259.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: kneNaKHeSXnZH259.v.3dns.vip
-- name: 🇸🇬 新加坡|@ripaojiedian
-  server: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: ASaqYIDZa9WDQ9Kq.v.3dns.vip
-- name: 🇸🇬 新加坡2|@ripaojiedian
-  server: 6JiziO8PxQAXBAtZ.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: 6JiziO8PxQAXBAtZ.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 6JiziO8PxQAXBAtZ.v.3dns.vip
-- name: 🇰🇷 韩国|@ripaojiedian
-  server: 8nTzyR5KNivfabaT.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: 8nTzyR5KNivfabaT.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 8nTzyR5KNivfabaT.v.3dns.vip
-- name: 🇺🇸 美国|@ripaojiedian
-  server: 53vXOVarmgcreAsv.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: 53vXOVarmgcreAsv.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 53vXOVarmgcreAsv.v.3dns.vip
-- name: 🇺🇸 美国2|@ripaojiedian
-  server: bJ1Aa2ZyJxYamYuK.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f0b7bbd66aad458aaec0e9acaab768b6
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: bJ1Aa2ZyJxYamYuK.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: bJ1Aa2ZyJxYamYuK.v.3dns.vip
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - auto
-  - fallback
+  - direct
 - name: auto
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - tg频道:@ripaojiedian
-  - 🇭🇰 香港|@ripaojiedian
-  - 🇭🇰 香港3|@ripaojiedian
-  - 🇭🇰 香港2|@ripaojiedian
-  - 🇭🇰 香港4|@ripaojiedian
-  - 🇭🇰 香港5|@ripaojiedian
-  - 🇯🇵 日本|@ripaojiedian
-  - 🇯🇵 日本2|@ripaojiedian
-  - 🇯🇵 日本3|@ripaojiedian
-  - 🇸🇬 新加坡|@ripaojiedian
-  - 🇸🇬 新加坡2|@ripaojiedian
-  - 🇰🇷 韩国|@ripaojiedian
-  - 🇺🇸 美国|@ripaojiedian
-  - 🇺🇸 美国2|@ripaojiedian
-- name: fallback
-  type: fallback
-  url: https://www.gstatic.com/generate_204
-  interval: 300
+  - 🇦🇱[www.v2nodes.com] ss-AL-1490...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1584...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1584... #1'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1574...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1559...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1559... #1'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1558...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1546... #1'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1545...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1538...
+  - 🇨🇭[www.v2nodes.com] ss-CH-1573...
+  - 🇨🇴[www.v2nodes.com] ss-CO-1539...
+  - 🇪🇸[www.v2nodes.com] ss-ES-1443...
+  - 🇪🇸[www.v2nodes.com] ss-ES-1431...
+  - 🇫🇷[www.v2nodes.com] ss-FR-1536...
+  - 🇬🇧[www.v2nodes.com] ss-GB-1451...
+  - 🇭🇰[www.v2nodes.com] ss-HK-1585...
+  - 🇭🇰[www.v2nodes.com] ss-HK-1576...
+  - 🇮🇩[www.v2nodes.com] ss-ID-1553...
+  - 🇮🇹[www.v2nodes.com] ss-IT-1549...
+  - 🇰🇷[www.v2nodes.com] ss-KR-1580...
+  - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+  - 🇳🇴[www.v2nodes.com] ss-NO-1220...
+  - 🇵🇹[www.v2nodes.com] ss-PT-1585...
+  - 🇷🇴[www.v2nodes.com] ss-RO-1298...
+  - 🏳[www.v2nodes.com] ss-
+  - 🇸🇬[www.v2nodes.com] ss-SG-1581...
+  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  - 🇺🇸[www.v2nodes.com] ss-US-1586...
+  - '🇺🇸[www.v2nodes.com] ss-US-1586... #1'
+  - 🇿🇦[www.v2nodes.com] ss-ZA-1534...
+  - 🇿🇦[www.v2nodes.com] ss-ZA-1336...
+  - 🇿🇦[www.v2nodes.com] ss-ZA-1333...
+  - 'tg频道:@ripaojiedian #1'
+  - '🇺🇸 美国 | USA #19'
+- name: direct
+  type: select
   proxies:
-  - tg频道:@ripaojiedian
-  - 🇭🇰 香港|@ripaojiedian
-  - 🇭🇰 香港3|@ripaojiedian
-  - 🇭🇰 香港2|@ripaojiedian
-  - 🇭🇰 香港4|@ripaojiedian
-  - 🇭🇰 香港5|@ripaojiedian
-  - 🇯🇵 日本|@ripaojiedian
-  - 🇯🇵 日本2|@ripaojiedian
-  - 🇯🇵 日本3|@ripaojiedian
-  - 🇸🇬 新加坡|@ripaojiedian
-  - 🇸🇬 新加坡2|@ripaojiedian
-  - 🇰🇷 韩国|@ripaojiedian
-  - 🇺🇸 美国|@ripaojiedian
-  - 🇺🇸 美国2|@ripaojiedian
+  - DIRECT
 rules:
 - DOMAIN,sni.macromedia.com,DIRECT
-- DOMAIN,classic.aco.rtmp.macromedia.com,DIRECT
 - GEOIP,cn,DIRECT
 - MATCH,PROXY
-mixed-port: 7890
