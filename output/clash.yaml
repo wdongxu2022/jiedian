@@ -1,387 +1,58 @@
 mixed-port: 7897
 allow-lan: false
 mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
+log-level: warning
 ipv6: false
 
 proxies:
-- name: "🇺🇸_US_美国"
+- name: "🇺🇸_美国_AWS"
   type: ss
   server: 98.89.22.134
   port: 443
   cipher: aes-256-cfb
   password: "amazonskr05"
   skip-cert-verify: true
-- name: "🇫🇷_FR_法国"
+- name: "🇫🇷_法国_AWS"
   type: ss
   server: 52.47.133.105
   port: 443
   cipher: aes-256-cfb
   password: "amazonskr05"
   skip-cert-verify: true
-- name: "🇦🇱[www.v2nodes.com] ss-AL-1490..."
-  type: ss
-  server: 130.49.189.158
-  port: 43558
-  cipher: chacha20-ietf-poly1305
-  password: "IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw="
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1584..."
-  type: ss
-  server: 64.74.161.148
-  port: 17201
-  cipher: aes-128-gcm
-  password: "1cbb3e347ee86e1980a7c731e9dd00a0"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1574..."
-  type: ss
-  server: 185.156.47.97
-  port: 9443
-  cipher: aes-256-gcm
-  password: "eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1559..."
-  type: ss
-  server: 51.222.141.125
-  port: 445
-  cipher: aes-256-gcm
-  password: "zDNVedRFPQexG9v"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1559... #1"
-  type: ss
-  server: 51.79.85.185
-  port: 8118
-  cipher: aes-256-gcm
-  password: "cdBIDV42DCwnfIN"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1558..."
-  type: ss
-  server: 51.222.200.165
-  port: 5000
-  cipher: aes-256-gcm
-  password: "Y6R9pAtvxxzmGC"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1557..."
-  type: ss
-  server: 51.222.136.236
-  port: 8882
-  cipher: aes-256-gcm
-  password: "kDWvXYZoTBcGkC4"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1546..."
-  type: ss
-  server: 51.222.155.113
-  port: 5601
-  cipher: aes-256-gcm
-  password: "Y6R9pAtvxxzmGC"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1546... #1"
-  type: ss
-  server: 51.222.155.32
-  port: 5003
-  cipher: aes-256-gcm
-  password: "g5MeD6Ft3CWlJId"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1545..."
-  type: ss
-  server: 51.79.64.198
-  port: 8119
-  cipher: aes-256-gcm
-  password: "cdBIDV42DCwnfIN"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1545... #1"
-  type: ss
-  server: 51.79.49.116
-  port: 8882
-  cipher: aes-256-gcm
-  password: "kDWvXYZoTBcGkC4"
-  skip-cert-verify: true
-- name: "🇨🇦[www.v2nodes.com] ss-CA-1538..."
-  type: ss
-  server: 51.222.12.127
-  port: 445
-  cipher: aes-256-gcm
-  password: "zDNVedRFPQexG9v"
-  skip-cert-verify: true
-- name: "🇨🇭[www.v2nodes.com] ss-CH-1573..."
-  type: ss
-  server: 132.243.175.144
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-  skip-cert-verify: true
-- name: "🇨🇴[www.v2nodes.com] ss-CO-1539..."
-  type: ss
-  server: 149.104.107.41
-  port: 8090
-  cipher: aes-256-gcm
-  password: "PCnnH6SQSnfoS27"
-  skip-cert-verify: true
-- name: "🇪🇸[www.v2nodes.com] ss-ES-1443..."
-  type: ss
-  server: 140.174.184.5
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: "qItG8SueYQcP"
-  skip-cert-verify: true
-- name: "🇪🇸[www.v2nodes.com] ss-ES-1431..."
-  type: ss
-  server: 108.181.121.226
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: "WSyL4XTwNsdv"
-  skip-cert-verify: true
-- name: "🇫🇷[www.v2nodes.com] ss-FR-1536..."
-  type: ss
-  server: 51.255.13.232
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: "BqnqToih0PbU"
-  skip-cert-verify: true
-- name: "🇬🇧[www.v2nodes.com] ss-GB-1451..."
-  type: ss
-  server: 158.173.24.73
-  port: 443
-  cipher: aes-128-gcm
-  password: "shadowsocks"
-  skip-cert-verify: true
-- name: "🇮🇩[www.v2nodes.com] ss-ID-1553..."
-  type: ss
-  server: 103.160.63.199
-  port: 31348
-  cipher: chacha20-ietf-poly1305
-  password: "8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az"
-  skip-cert-verify: true
-- name: "🇰🇷[www.v2nodes.com] ss-KR-1185..."
-  type: ss
-  server: 141.164.45.187
-  port: 6697
-  cipher: aes-256-gcm
-  password: "TEzjfAYq2IjtuoS"
-  skip-cert-verify: true
-- name: "🇲🇽[www.v2nodes.com] ss-MX-1564..."
-  type: ss
-  server: 64.177.90.30
-  port: 8388
-  cipher: aes-256-gcm
-  password: "BWyPPTusFKhGgzKh"
-  skip-cert-verify: true
-- name: "🇳🇴[www.v2nodes.com] ss-NO-1220..."
-  type: ss
-  server: 185.213.23.63
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-  skip-cert-verify: true
-- name: "🇵🇹[www.v2nodes.com] ss-PT-1585..."
-  type: ss
-  server: 185.231.233.91
-  port: 17167
-  cipher: aes-128-gcm
-  password: "ca438054771821250089399a2f33275e"
-  skip-cert-verify: true
-- name: "🇷🇴[www.v2nodes.com] ss-RO-1298..."
-  type: ss
-  server: 154.46.31.106
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: "QFWzCw2uX9B9i6qAYeFBIE"
-  skip-cert-verify: true
-- name: "🏳[www.v2nodes.com] ss-"
-  type: ss
-  server: 90.156.203.62
-  port: 5112
-  cipher: chacha20-ietf-poly1305
-  password: "VVlAff77CnAU43Aoc5j15Y"
-  skip-cert-verify: true
-- name: "🇸🇬[www.v2nodes.com] ss-SG-1581..."
-  type: ss
-  server: 45.128.12.20
-  port: 14249
-  cipher: chacha20-ietf-poly1305
-  password: "9epp3o9ng8ej59uv"
-  skip-cert-verify: true
-- name: "🇺🇸[www.v2nodes.com] ss-US-1586..."
-  type: ss
-  server: 66.23.201.172
-  port: 10272
-  cipher: aes-128-gcm
-  password: "6c4993acd1ca7f12f0a18bdcb3c37c6c"
-  skip-cert-verify: true
-- name: "🇺🇸[www.v2nodes.com] ss-US-1586... #1"
-  type: ss
-  server: 74.201.177.54
-  port: 14680
-  cipher: aes-128-gcm
-  password: "1377d5cfafc9279a904deb3bfa4f3de2"
-  skip-cert-verify: true
-- name: "🇺🇸[www.v2nodes.com] ss-US-1584..."
-  type: ss
-  server: 103.214.111.162
-  port: 16469
-  cipher: aes-128-gcm
-  password: "87e9cb62706b5cd08da95b8b423cb673"
-  skip-cert-verify: true
-- name: "🇺🇸[www.v2nodes.com] ss-US-1584... #1"
-  type: ss
-  server: 66.23.204.219
-  port: 10676
-  cipher: aes-128-gcm
-  password: "2591a42af498878e47d881cd1ed1fa9d"
-  skip-cert-verify: true
-- name: "🇿🇦[www.v2nodes.com] ss-ZA-1336..."
-  type: ss
-  server: 102.37.156.224
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: "aduB9HGxQHjA2SBMRjkHX6"
-  skip-cert-verify: true
-- name: "🇿🇦[www.v2nodes.com] ss-ZA-1333..."
-  type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-  skip-cert-verify: true
-- name: "tg频道:@ripaojiedian #1"
-  type: ss
-  server: 63.180.254.10
-  port: 443
-  cipher: aes-256-cfb
-  password: "amazonskr05"
-  skip-cert-verify: true
-- name: "🇰🇷 韩国 | KOR 3"
+- name: "🇰🇷_韩国_VPS"
   type: ss
   server: 43.201.103.218
   port: 8443
   cipher: chacha20-ietf-poly1305
-  password: "7e68e32f-8015-4f37-9082-70e8b0b58043"
+  password: ""
+  skip-cert-verify: true
+- name: "🇺🇸_美国_墨西哥湾"
+  type: ss
+  server: 64.177.90.30
+  port: 8388
+  cipher: aes-256-gcm
+  password: ""
   skip-cert-verify: true
 
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - "🇺🇸_US_美国"
-  - "🇫🇷_FR_法国"
-  - "🇦🇱[www.v2nodes.com] ss-AL-1490..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1584..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1574..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1558..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1557..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1538..."
-  - "🇨🇭[www.v2nodes.com] ss-CH-1573..."
-  - "🇨🇴[www.v2nodes.com] ss-CO-1539..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1443..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1431..."
-  - "🇫🇷[www.v2nodes.com] ss-FR-1536..."
-  - "🇬🇧[www.v2nodes.com] ss-GB-1451..."
-  - "🇮🇩[www.v2nodes.com] ss-ID-1553..."
-  - "🇰🇷[www.v2nodes.com] ss-KR-1185..."
-  - "🇲🇽[www.v2nodes.com] ss-MX-1564..."
-  - "🇳🇴[www.v2nodes.com] ss-NO-1220..."
-  - "🇵🇹[www.v2nodes.com] ss-PT-1585..."
-  - "🇷🇴[www.v2nodes.com] ss-RO-1298..."
-  - "🏳[www.v2nodes.com] ss-"
-  - "🇸🇬[www.v2nodes.com] ss-SG-1581..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586... #1"
-  - "🇺🇸[www.v2nodes.com] ss-US-1584..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1584... #1"
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1336..."
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1333..."
-  - "tg频道:@ripaojiedian #1"
-  - "🇰🇷 韩国 | KOR 3"
-- name: auto
+  - 自动选择
+  - 🇺🇸_美国_AWS
+  - 🇫🇷_法国_AWS
+  - 🇰🇷_韩国_VPS
+  - 🇺🇸_美国_墨西哥湾
+- name: 自动选择
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
-  tolerance: 50
+  tolerance: 100
   proxies:
-  - "🇺🇸_US_美国"
-  - "🇫🇷_FR_法国"
-  - "🇦🇱[www.v2nodes.com] ss-AL-1490..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1584..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1574..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1558..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1557..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1538..."
-  - "🇨🇭[www.v2nodes.com] ss-CH-1573..."
-  - "🇨🇴[www.v2nodes.com] ss-CO-1539..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1443..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1431..."
-  - "🇫🇷[www.v2nodes.com] ss-FR-1536..."
-  - "🇬🇧[www.v2nodes.com] ss-GB-1451..."
-  - "🇮🇩[www.v2nodes.com] ss-ID-1553..."
-  - "🇰🇷[www.v2nodes.com] ss-KR-1185..."
-  - "🇲🇽[www.v2nodes.com] ss-MX-1564..."
-  - "🇳🇴[www.v2nodes.com] ss-NO-1220..."
-  - "🇵🇹[www.v2nodes.com] ss-PT-1585..."
-  - "🇷🇴[www.v2nodes.com] ss-RO-1298..."
-  - "🏳[www.v2nodes.com] ss-"
-  - "🇸🇬[www.v2nodes.com] ss-SG-1581..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586... #1"
-  - "🇺🇸[www.v2nodes.com] ss-US-1584..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1584... #1"
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1336..."
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1333..."
-  - "tg频道:@ripaojiedian #1"
-  - "🇰🇷 韩国 | KOR 3"
-- name: fallback
-  type: fallback
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  proxies:
-  - "🇺🇸_US_美国"
-  - "🇫🇷_FR_法国"
-  - "🇦🇱[www.v2nodes.com] ss-AL-1490..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1584..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1574..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1559... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1558..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1557..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1546... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545..."
-  - "🇨🇦[www.v2nodes.com] ss-CA-1545... #1"
-  - "🇨🇦[www.v2nodes.com] ss-CA-1538..."
-  - "🇨🇭[www.v2nodes.com] ss-CH-1573..."
-  - "🇨🇴[www.v2nodes.com] ss-CO-1539..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1443..."
-  - "🇪🇸[www.v2nodes.com] ss-ES-1431..."
-  - "🇫🇷[www.v2nodes.com] ss-FR-1536..."
-  - "🇬🇧[www.v2nodes.com] ss-GB-1451..."
-  - "🇮🇩[www.v2nodes.com] ss-ID-1553..."
-  - "🇰🇷[www.v2nodes.com] ss-KR-1185..."
-  - "🇲🇽[www.v2nodes.com] ss-MX-1564..."
-  - "🇳🇴[www.v2nodes.com] ss-NO-1220..."
-  - "🇵🇹[www.v2nodes.com] ss-PT-1585..."
-  - "🇷🇴[www.v2nodes.com] ss-RO-1298..."
-  - "🏳[www.v2nodes.com] ss-"
-  - "🇸🇬[www.v2nodes.com] ss-SG-1581..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1586... #1"
-  - "🇺🇸[www.v2nodes.com] ss-US-1584..."
-  - "🇺🇸[www.v2nodes.com] ss-US-1584... #1"
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1336..."
-  - "🇿🇦[www.v2nodes.com] ss-ZA-1333..."
-  - "tg频道:@ripaojiedian #1"
-  - "🇰🇷 韩国 | KOR 3"
+  - 🇺🇸_美国_AWS
+  - 🇫🇷_法国_AWS
+  - 🇰🇷_韩国_VPS
+  - 🇺🇸_美国_墨西哥湾
 
 rules:
 - GEOIP,cn,DIRECT
